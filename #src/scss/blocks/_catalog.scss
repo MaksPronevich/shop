@@ -59,12 +59,6 @@
         &:last-child {
             margin-bottom: 0;
         }
-
-        &:hover {
-            .catalog-sub-nav-list {
-                display: block;
-            }
-        }
     }
 }
 
@@ -76,7 +70,7 @@
     border-left: 1px solid #D3D3D3;
     position: absolute;
     top: 0;
-    right: -115%;
+    right: -100%;
 
     &__item {
         margin-bottom: 13px;
@@ -96,10 +90,8 @@
             }
         }
     }
-}
-.catalog-sub-nav-list__item-title {
-}
-.catalog-sub-nav-list__item {
-}
-.catalog-sub-nav-list__item-link {
+
+    &.active {
+        display: block;
+    }
 }

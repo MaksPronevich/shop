@@ -738,10 +738,6 @@ a {
   margin-bottom: 0;
 }
 
-.catalog-nav-list__item:hover .catalog-sub-nav-list {
-  display: block;
-}
-
 .catalog-sub-nav-list {
   display: none;
   padding: 28px 15px;
@@ -751,7 +747,7 @@ a {
   border-left: 1px solid #D3D3D3;
   position: absolute;
   top: 0;
-  right: -115%;
+  right: -100%;
 }
 
 .catalog-sub-nav-list__item {
@@ -773,4 +769,8 @@ a {
 
 .catalog-sub-nav-list__item-link:hover {
   color: #5661CB;
+}
+
+.catalog-sub-nav-list.active {
+  display: block;
 }
