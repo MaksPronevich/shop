@@ -1,11 +1,10 @@
 'use strict';
 document.addEventListener("DOMContentLoaded", () => {
 
-
-    // functions    
+    // ================================================= functions ==================================================    
     const toggleCatalog = () => {
-        const catalogBtnElem = document.querySelector('.btn--catalog');
-        const catalogElem = document.querySelector('.catalog-nav');
+        const catalogBtnElem = document.querySelector('.btn-catalog');
+        const catalogElem = document.querySelector('.catalog-wrap');
 
         catalogBtnElem.addEventListener("click", e => {
             catalogElem.classList.toggle('active');
@@ -14,42 +13,60 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    const catalogDropdown = () => {
-        const catalogNavLinkElems = document.querySelectorAll('.catalog-nav-list__item-link');
-        const catalogSubNavListElems = document.querySelectorAll('.catalog-sub-nav-list');
+    const catalogSubNavigation = () => {
+        const navLinkElems = document.querySelectorAll('.catalog-nav-list__item-link');
+        const subNavListElems = document.querySelectorAll('.catalog-sub-nav-list');
+        const container = document.querySelector('.catalog-nav');
 
-        const deactivate = () => {
-            catalogSubNavListElems.forEach(catalogSubNavListElem => catalogSubNavListElem.classList.remove('active'));
+        const deactivateSubNav = () => {
+            subNavListElems.forEach(subNavListElem => subNavListElem.classList.remove('active'));
         };
 
-        catalogNavLinkElems.forEach((catalogNavLinkElem, i) => {
-            catalogNavLinkElem.addEventListener("mouseover", () => {
-                deactivate();
-                catalogSubNavListElems[i].classList.add('active');
+
+        navLinkElems.forEach((navLinkElem, i) => {
+            navLinkElem.addEventListener("mouseover", () => {
+                deactivateSubNav();
+                subNavListElems[i].classList.add('active');
             });
+            navLinkElem.addEventListener("click", e => e.preventDefault());
         });
 
 
+        // document.addEventListener('mouseover', e => {
+        //     const target = e.target;
+        //     if (
+        //         // !target.classList.contains('catalog-nav') &&
+        //         // !target.classList.contains('catalog-nav-nav-list') &&
+        //         // !target.classList.contains('catalog-nav-list__item') &&
+        //         // !target.classList.contains('catalog-nav-list__item-link') &&
+
+        //         // !target.classList.contains('catalog-sub-nav') &&
+        //         // !target.classList.contains('catalog-sub-nav-list') &&
+        //         // !target.classList.contains('catalog-sub-nav-list__item') &&
+        //         // !target.classList.contains('catalog-sub-nav-list__item-link') &&
+        //         // !target.classList.contains('catalog-sub-nav-list__item-title')
+        //     ) {
+        //         deactivateSubNav();
+        //     }
+        // });
         document.addEventListener('mouseover', e => {
-            if (
-                !(e.target === profileBlock || profileBlock.contains(e.target)) &&
-                !(e.target === profileLink || profileLink.contains(e.target)) &&
-                profileBlock.classList.contains('active')
-            ) {
-                toggleProfileBlock();
+            const target = e.target;
+            if (container.contains(target)) {
+                deactivateSubNav();
+                e.stopPropagation();
             }
         });
+
+
+
     };
 
 
 
 
-
-
-
-    // functions call
+    // ================================================= functions call ================================================== 
     toggleCatalog();
-    catalogDropdown();
+    catalogSubNavigation();
 });
 
 
