@@ -11,30 +11,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  var catalogDropdown = function catalogDropdown() {
-    var catalogNavLinkElems = document.querySelectorAll('.catalog-nav-list__item-link');
-    var catalogSubNavListElems = document.querySelectorAll('.catalog-sub-nav-list');
+  var catalogNavigation = function catalogNavigation() {
+    var navLinkElems = document.querySelectorAll('.catalog-nav-list__item-link');
+    var subNavListElems = document.querySelectorAll('.catalog-sub-nav-list');
 
-    var deactivate = function deactivate() {
-      catalogSubNavListElems.forEach(function (catalogSubNavListElem) {
-        return catalogSubNavListElem.classList.remove('active');
+    var deactivateSubNavList = function deactivateSubNavList() {
+      subNavListElems.forEach(function (subNavListElem) {
+        return subNavListElem.classList.remove('active');
       });
     };
 
-    catalogNavLinkElems.forEach(function (catalogNavLinkElem, i) {
-      catalogNavLinkElem.addEventListener("mouseover", function () {
-        deactivate();
-        catalogSubNavListElems[i].classList.add('active');
+    navLinkElems.forEach(function (navLinkElem, i) {
+      navLinkElem.addEventListener("mouseover", function (e) {
+        deactivateSubNavList();
+        subNavListElems[i].classList.add('active');
+        e.preventDefault();
       });
-    });
-    document.addEventListener('mouseover', function (e) {
-      if (!(e.target === profileBlock || profileBlock.contains(e.target)) && !(e.target === profileLink || profileLink.contains(e.target)) && profileBlock.classList.contains('active')) {
-        toggleProfileBlock();
-      }
     });
   }; // functions call
 
 
   toggleCatalog();
-  catalogDropdown();
+  catalogNavigation();
 });

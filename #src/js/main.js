@@ -1,7 +1,6 @@
 'use strict';
 document.addEventListener("DOMContentLoaded", () => {
 
-
     // functions    
     const toggleCatalog = () => {
         const catalogBtnElem = document.querySelector('.btn--catalog');
@@ -14,42 +13,30 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    const catalogDropdown = () => {
-        const catalogNavLinkElems = document.querySelectorAll('.catalog-nav-list__item-link');
-        const catalogSubNavListElems = document.querySelectorAll('.catalog-sub-nav-list');
+    const catalogNavigation = () => {
+        const navLinkElems = document.querySelectorAll('.catalog-nav-list__item-link');
+        const subNavListElems = document.querySelectorAll('.catalog-sub-nav-list');
 
-        const deactivate = () => {
-            catalogSubNavListElems.forEach(catalogSubNavListElem => catalogSubNavListElem.classList.remove('active'));
+        const deactivateSubNavList = () => {
+            subNavListElems.forEach(subNavListElem => subNavListElem.classList.remove('active'));
         };
 
-        catalogNavLinkElems.forEach((catalogNavLinkElem, i) => {
-            catalogNavLinkElem.addEventListener("mouseover", () => {
-                deactivate();
-                catalogSubNavListElems[i].classList.add('active');
+        navLinkElems.forEach((navLinkElem, i) => {
+            navLinkElem.addEventListener("mouseover", e => {
+                deactivateSubNavList();
+                subNavListElems[i].classList.add('active');
+                e.preventDefault();
             });
-        });
+        }); 
 
+        
 
-        document.addEventListener('mouseover', e => {
-            if (
-                !(e.target === profileBlock || profileBlock.contains(e.target)) &&
-                !(e.target === profileLink || profileLink.contains(e.target)) &&
-                profileBlock.classList.contains('active')
-            ) {
-                toggleProfileBlock();
-            }
-        });
     };
-
-
-
-
-
 
 
     // functions call
     toggleCatalog();
-    catalogDropdown();
+    catalogNavigation();
 });
 
 
