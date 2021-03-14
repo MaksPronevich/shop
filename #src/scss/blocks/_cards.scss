@@ -1,0 +1,52 @@
+.product-card {
+    width: 240px;
+    border: 1px solid rgba(#868686, .3);
+
+    &__container {
+        padding: 10px;
+    }
+
+    &__favorites {
+        margin-left: auto;
+        margin-top: 100px;
+    }
+
+    &__img {
+
+    }
+
+    &__title {
+        
+    }
+
+    &__description {
+        
+    }
+
+    &__info{
+
+        &-delivery {
+
+        }
+
+        &-availability {
+
+        }
+    }
+
+    &__price {
+        
+    }
+
+    &__btns {
+        
+    }
+
+    &__btn-buy {
+        
+    }
+
+    &__btn-basket {
+        
+    }
+}

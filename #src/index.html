@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гермес || Стройматериалы</title>
-    <link rel="shortcut icon" href="img/shortcut.png" type="image/png">
+    <link rel="shortcut icon" href="img/different/shortcut.png" type="image/png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/main.min.js" defer></script>
 </head>
 
@@ -19,6 +21,32 @@
 
     @@include('common/options.html')
 
+    <main class="main">
+        <div class="container">
+            <section class="intro">
+                <div class="intro-slider-wrap">
+                    <div class="swiper-container intro-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide intro-slide"></div>
+                            <div class="swiper-slide intro-slide"></div>
+                            <div class="swiper-slide intro-slide"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="special-offers">
+                <div class="section-header">
+                    <h2 class="section-title">Спецпредложения</h2>
+                    <a href="#" class="section-link section-link--red">Перейти в раздел скидок</a>
+                </div>
+                <div class="special-offers-content">
+                    @@include('common/cards/product-card.html')
+                </div>
+            </section>
+        </div>
+    </main>
+    
 </body>
 
 </html>

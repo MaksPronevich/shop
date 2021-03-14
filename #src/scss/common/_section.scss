@@ -1,0 +1,28 @@
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    color: $black;
+    font-weight: $fw-medium;
+}
+
+.section-link {
+    color: $blue;
+    font-weight: $fw-medium;
+    text-decoration: underline;
+    transition: $transition;
+
+    &:after {
+        content: url('../img/different/arrow-right--red.png');
+        margin-left: 8px;
+    }
+
+    &--red {
+        color: $red;
+    }
+}

@@ -5,13 +5,13 @@
     border-radius: 4px;
     transition: $transition;
 
-    &--catalog {
+    &-catalog {
         font-size: 1.125rem;
         padding: 10px 160px 10px 70px ;
         position: relative;
 
         &:before {
-            content: url(../img/burger.svg);
+            content: url(../img/options/burger.svg);
             display: block;
             position: absolute;
             left: 10px;
@@ -19,7 +19,7 @@
         }
     }
 
-    &--order {
+    &-order {
         font-size: 1.125rem;
         padding: 10px 36px;
     }
