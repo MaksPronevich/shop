@@ -28,7 +28,9 @@ const catalogSubNavigation = () => {
     });
 
     document.addEventListener('mouseover', e => {
-        if (!e.target.closest('.catalog-nav')) deactivateSubNav();
+        if (!e.target.closest('.catalog-nav')) {
+            deactivateSubNav();
+        }
     });
 };
 
@@ -41,7 +43,73 @@ const slider = () => {
             prevEl: '.swiper-button-prev',
         },
     });
-}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const productCard = () => {
+    const data = [
+        {
+            ribbonText: 'Лидер продаж',
+            img: 'img/card/product.png',
+            title: 'Кирпич облицовочный М95 Воткинский',
+            description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+            delivery: 'бесплатная доставка',
+            availability: 'в наличии',
+            price: 4500,
+        },
+    ];
+
+    const fragment = document.createDocumentFragment();
+
+    const createCardTemplate = ({ ribbonText, img, title, description, delivery, availability, price } = {}) => {
+        const сard = document.createElement('div');
+        const сardContainer = document.createElement('div');
+        const cardImgWrap = document.document.createElement('div');
+        const cardImg = document.document.createElement('img');
+        const cardTitle = document.document.createElement('h4');
+        const cardDescr = document.document.createElement('p');
+        const cardInfo = document.document.createElement('div');
+        const cardInfoDelivery = document.document.createElement('p');
+        const cardInfoavailability = document.document.createElement('p');
+        const cardPrice = document.document.createElement('div');
+        const cardBtns = document.document.createElement('div');
+
+    };
+
+
+    data.forEach(card => {
+        const сard = createCardTemplate(card);
+    });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -50,6 +118,7 @@ const slider = () => {
 toggleCatalog();
 catalogSubNavigation();
 slider();
+productCard();
 
 
 

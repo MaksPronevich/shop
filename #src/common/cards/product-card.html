@@ -1,8 +1,12 @@
 <div class="product-card">
+    <span @@if (context.ribbon==='red' ){ class='product-card__ribbon product-card__ribbon--red' } else {
+        @@if(context.ribbon==='green' ){ class='product-card__ribbon product-card__ribbon--green' } } else {
+        @@if(context.ribbon==='none' ){ class='product-card__ribbon product-card__ribbon--none' } }
+        class="product-card__ribbon">@@text</span>
+    <a href="#" class="product-card__favorites">
+        <img src="img/card/favorites.svg" alt="favorites">
+    </a>
     <div class="product-card__container">
-        <a href="#" class="product-card__favorites">
-            <img src="img/card/favorites.svg" alt="favorites">
-        </a>
         <div class="product-card__img">
             <img src="img/card/product.png" alt="product">
         </div>
@@ -11,11 +15,10 @@
         <div class="product-card__info">
             <p class="product-card__info-delivery">бесплатная доставка</p>
             <p class="product-card__info-availability">в наличии</p>
-            <p>бесплатная доставка</p>
         </div>
         <div class="product-card__price"><span>4500</span> &#x20bd; / шт.</div>
         <div class="product-card__btns">
-            <a href="#" class="product-card__btn-buy">Купить в 1 клик</a>
+            <a href="#" class="product-card__btn-buy btn btn-buy">Купить в 1 клик</a>
             <a href="#" class="product-card__btn-basket"><img src="img/card/basket.svg" alt="basket"></a>
         </div>
     </div>

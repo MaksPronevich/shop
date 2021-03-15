@@ -24,6 +24,11 @@
         padding: 10px 36px;
     }
 
+    &-buy {
+        font-size: 0.875rem;
+        padding: 9px 27px;
+    }
+
     &:hover {
         background-color: darken($blue, 5);
     }

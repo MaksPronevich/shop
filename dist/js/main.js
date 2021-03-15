@@ -29,7 +29,9 @@ var catalogSubNavigation = function catalogSubNavigation() {
     });
   });
   document.addEventListener('mouseover', function (e) {
-    if (!e.target.closest('.catalog-nav')) deactivateSubNav();
+    if (!e.target.closest('.catalog-nav')) {
+      deactivateSubNav();
+    }
   });
 };
 
@@ -41,9 +43,50 @@ var slider = function slider() {
       prevEl: '.swiper-button-prev'
     }
   });
+};
+
+var productCard = function productCard() {
+  var data = [{
+    ribbonText: 'Лидер продаж',
+    img: 'img/card/product.png',
+    title: 'Кирпич облицовочный М95 Воткинский',
+    description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+    delivery: 'бесплатная доставка',
+    availability: 'в наличии',
+    price: 4500
+  }];
+  var fragment = document.createDocumentFragment();
+
+  var createCardTemplate = function createCardTemplate() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        ribbonText = _ref.ribbonText,
+        img = _ref.img,
+        title = _ref.title,
+        description = _ref.description,
+        delivery = _ref.delivery,
+        availability = _ref.availability,
+        price = _ref.price;
+
+    var сard = document.createElement('div');
+    var сardContainer = document.createElement('div');
+    var cardImgWrap = document.document.createElement('div');
+    var cardImg = document.document.createElement('img');
+    var cardTitle = document.document.createElement('h4');
+    var cardDescr = document.document.createElement('p');
+    var cardInfo = document.document.createElement('div');
+    var cardInfoDelivery = document.document.createElement('p');
+    var cardInfoavailability = document.document.createElement('p');
+    var cardPrice = document.document.createElement('div');
+    var cardBtns = document.document.createElement('div');
+  };
+
+  data.forEach(function (card) {
+    var сard = createCardTemplate(card);
+  });
 }; // ================================================= functions call ================================================== 
 
 
 toggleCatalog();
 catalogSubNavigation();
 slider();
+productCard();
