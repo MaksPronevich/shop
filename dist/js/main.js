@@ -54,8 +54,17 @@ var productCard = function productCard() {
     delivery: 'бесплатная доставка',
     availability: 'в наличии',
     price: 4500
+  }, {
+    ribbonText: 'Лидер продаж',
+    img: 'img/card/product.png',
+    title: 'Кирпич облицовочный М95 Воткинский',
+    description: 'Кол-во на поддоне, шт. - 29790- Формат одинарный',
+    delivery: 'бесплатная доставка',
+    availability: 'в наличии',
+    price: 4900
   }];
   var fragment = document.createDocumentFragment();
+  var cont = document.querySelector('.special-offers-content');
 
   var createCardTemplate = function createCardTemplate() {
     var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
@@ -69,19 +78,48 @@ var productCard = function productCard() {
 
     var сard = document.createElement('div');
     var сardContainer = document.createElement('div');
-    var cardImgWrap = document.document.createElement('div');
-    var cardImg = document.document.createElement('img');
-    var cardTitle = document.document.createElement('h4');
-    var cardDescr = document.document.createElement('p');
-    var cardInfo = document.document.createElement('div');
-    var cardInfoDelivery = document.document.createElement('p');
-    var cardInfoavailability = document.document.createElement('p');
-    var cardPrice = document.document.createElement('div');
-    var cardBtns = document.document.createElement('div');
+    var cardImgWrap = document.createElement('div');
+    var cardImg = document.createElement('img');
+    var cardTitle = document.createElement('h4');
+    var cardDescr = document.createElement('p');
+    var cardInfo = document.createElement('div');
+    var cardInfoDelivery = document.createElement('p');
+    var cardInfoAvailability = document.createElement('p');
+    var cardPrice = document.createElement('div');
+    var cardBtns = document.createElement('div');
+    var cardBtnBuy = document.createElement('a');
+    var cardBtnBasket = document.createElement('a');
+    сard.classList.add('product-card');
+    сardContainer.classList.add('product-card__container');
+    cardImgWrap.classList.add('product-card__img'); // cardImg.classList.add('');
+
+    cardTitle.classList.add('product-card__title');
+    cardDescr.classList.add('product-card__description');
+    cardInfo.classList.add('product-card__info');
+    cardInfoDelivery.classList.add('product-card__info-delivery');
+    cardInfoAvailability.classList.add('product-card__info-availability');
+    cardPrice.classList.add('product-card__price');
+    cardBtns.classList.add('product-card__btns');
+    cardBtnBuy.classList.add('product-card__btn-buy', 'btn', 'btn-buy');
+    cardBtnBasket.classList.add('product-card__btn-basket');
+    cardTitle.textContent = title;
+    cardDescr.textContent = description;
+    cardInfoDelivery.textContent = delivery;
+    cardInfoAvailability.textContent = availability;
+    cardPrice.textContent = price;
+    cardBtnBuy.textContent = 'Купить в 1 клик';
+    cardBtns.append(cardBtnBuy, cardBtnBasket);
+    cardInfo.append(cardInfoDelivery, cardInfoAvailability);
+    cardImgWrap.append(cardImg);
+    сardContainer.append(cardImgWrap, cardTitle, cardDescr, cardInfo, cardPrice, cardBtns);
+    сard.append(сardContainer);
+    return сard;
   };
 
   data.forEach(function (card) {
     var сard = createCardTemplate(card);
+    fragment.append(сard);
+    cont.append(fragment);
   });
 }; // ================================================= functions call ================================================== 
 
