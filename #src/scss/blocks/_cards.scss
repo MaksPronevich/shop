@@ -1,9 +1,10 @@
-.product-card {
+.card {
     width: 245px;
     border: 1px solid rgba(#868686, .3);
     border-radius: 6px;
     position: relative;
     margin-bottom: 32px;
+    padding: 10px;
 
     &__ribbon {
         position: absolute;
@@ -26,10 +27,6 @@
         &--none {
             display: none;
         }
-    }
-
-    &__container {
-        padding: 10px;
     }
 
     &__favorites {
@@ -63,20 +60,24 @@
 
     &__info{
         display: flex;
+        justify-content: space-between;   
+    }
+
+    &__delivery,
+    &__availability {
+        font-size: 0.75rem;
+        color: $gray;
+        font-weight: $fw-light;
+        text-decoration: underline;
+    }
+
+    &__availability {
+        color: $green;
+    }
+
+    &__prices {
+        display: flex;
         justify-content: space-between;
-        
-
-        &-delivery,
-        &-availability {
-            font-size: 0.75rem;
-            color: $gray;
-            font-weight: $fw-light;
-            text-decoration: underline;
-        }
-
-        &-availability {
-            color: $green;
-        }
     }
 
     &__price {

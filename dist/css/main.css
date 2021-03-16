@@ -456,6 +456,11 @@ textarea {
   padding: 0.2em 0;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -864,15 +869,16 @@ a {
   justify-content: space-between;
 }
 
-.product-card {
+.card {
   width: 245px;
   border: 1px solid rgba(134, 134, 134, 0.3);
   border-radius: 6px;
   position: relative;
   margin-bottom: 32px;
+  padding: 10px;
 }
 
-.product-card__ribbon {
+.card__ribbon {
   position: absolute;
   left: 0;
   top: 10px;
@@ -884,44 +890,40 @@ a {
   clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0% 100%);
 }
 
-.product-card__ribbon--red {
+.card__ribbon--red {
   background-color: #D41A36;
 }
 
-.product-card__ribbon--green {
+.card__ribbon--green {
   background-color: #219653;
 }
 
-.product-card__ribbon--none {
+.card__ribbon--none {
   display: none;
 }
 
-.product-card__container {
-  padding: 10px;
-}
-
-.product-card__favorites {
+.card__favorites {
   display: inline-block;
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-.product-card__img {
+.card__img {
   margin: 40px 0px 10px;
 }
 
-.product-card__img img {
+.card__img img {
   margin: 0px auto;
 }
 
-.product-card__title {
+.card__title {
   color: #272727;
   font-weight: 500;
   line-height: 120%;
 }
 
-.product-card__description {
+.card__description {
   font-size: 0.875rem;
   color: #494949;
   font-weight: 300;
@@ -929,7 +931,7 @@ a {
   line-height: 115%;
 }
 
-.product-card__info {
+.card__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -938,29 +940,38 @@ a {
   justify-content: space-between;
 }
 
-.product-card__info-delivery,
-.product-card__info-availability {
+.card__delivery,
+.card__availability {
   font-size: 0.75rem;
   color: #7D7D7D;
   font-weight: 300;
   text-decoration: underline;
 }
 
-.product-card__info-availability {
+.card__availability {
   color: #219653;
 }
 
-.product-card__price {
+.card__prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.card__price {
   font-size: 0.75rem;
   margin: 10px 0px;
 }
 
-.product-card__price span {
+.card__price span {
   font-size: 1.25rem;
   font-weight: 500;
 }
 
-.product-card__btns {
+.card__btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -972,7 +983,7 @@ a {
   align-items: center;
 }
 
-.product-card__btn-basket {
+.card__btn-basket {
   border: 1px solid #5661CB;
   border-radius: 4px;
   padding: 6px 16px;

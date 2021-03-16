@@ -35,7 +35,7 @@ const catalogSubNavigation = () => {
 };
 
 
-const slider = () => {
+const initSlider = () => {
     new Swiper('.swiper-container', {
         loop: true,
         navigation: {
@@ -46,22 +46,11 @@ const slider = () => {
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 const productCard = () => {
     const data = [
         {
             ribbonText: 'Лидер продаж',
+            ribbonColor: '#F2994A',
             img: 'img/card/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
@@ -70,10 +59,32 @@ const productCard = () => {
             price: 4500,
         },
         {
-            ribbonText: 'Лидер продаж',
+            ribbonText: 'Лучшая цена',
+            ribbonColor: '#D41A36',
             img: 'img/card/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
-            description: 'Кол-во на поддоне, шт. - 29790- Формат одинарный',
+            description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+            delivery: 'бесплатная доставка',
+            availability: 'в наличии',
+            price: 4500,
+            priceWithDiscount: 4300,
+        },
+        {
+            ribbonText: 'Привезём сегодня',
+            ribbonColor: '#219653',
+            img: 'img/card/product.png',
+            title: 'Кирпич облицовочный М95 Воткинский',
+            description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+            delivery: 'бесплатная доставка',
+            availability: 'в наличии',
+            price: 4900,
+        },
+        {
+            ribbonText: '',
+            ribbonColor: 'none',
+            img: 'img/card/product.png',
+            title: 'Кирпич облицовочный М95 Воткинский',
+            description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
             availability: 'в наличии',
             price: 4900,
@@ -83,9 +94,11 @@ const productCard = () => {
     const fragment = document.createDocumentFragment();
     const cont = document.querySelector('.special-offers-content');
 
-    const createCardTemplate = ({ ribbonText, img, title, description, delivery, availability, price } = {}) => {
+    const createCardTemplate = ({ ribbonText, ribbonColor, img, title, description, delivery, availability, price } = {}) => {
         const сard = document.createElement('div');
-        const сardContainer = document.createElement('div');
+        const cardRibbon = document.createElement('span');
+        const cardFavoritesLink = document.createElement('a');
+        const cardFavoritesImg = document.createElement('img');
         const cardImgWrap = document.createElement('div');
         const cardImg = document.createElement('img');
         const cardTitle = document.createElement('h4');
@@ -95,36 +108,48 @@ const productCard = () => {
         const cardInfoAvailability = document.createElement('p');
         const cardPrice = document.createElement('div');
         const cardBtns = document.createElement('div');
-        const cardBtnBuy = document.createElement('a');
-        const cardBtnBasket = document.createElement('a');
+        const cardBuyBtn = document.createElement('a');
+        const cardBasketBtn = document.createElement('a');
+        const cardBasketImg = document.createElement('img');
 
-        сard.classList.add('product-card');
-        сardContainer.classList.add('product-card__container');
-        cardImgWrap.classList.add('product-card__img');
-        // cardImg.classList.add('');
-        cardTitle.classList.add('product-card__title');
-        cardDescr.classList.add('product-card__description');
-        cardInfo.classList.add('product-card__info');
-        cardInfoDelivery.classList.add('product-card__info-delivery');
-        cardInfoAvailability.classList.add('product-card__info-availability');
-        cardPrice.classList.add('product-card__price');
-        cardBtns.classList.add('product-card__btns');
-        cardBtnBuy.classList.add('product-card__btn-buy', 'btn', 'btn-buy');
-        cardBtnBasket.classList.add('product-card__btn-basket');
+        сard.classList.add('card');
+        cardRibbon.classList.add('card__ribbon');
+        cardFavoritesLink.classList.add('card__favorites');
+        cardFavoritesLink.setAttribute('href', '#');
+        cardFavoritesImg.setAttribute('src', 'img/card/favorites.svg');
+        cardFavoritesImg.setAttribute('alt', 'favorites');
+        cardImgWrap.classList.add('card__img');
+        cardImg.setAttribute('src', img);
+        cardImg.setAttribute('alt', 'product1');
+        cardTitle.classList.add('card__title');
+        cardDescr.classList.add('card__description');
+        cardInfo.classList.add('card__info');
+        cardInfoDelivery.classList.add('card__delivery');
+        cardInfoAvailability.classList.add('card__availability');
+        cardPrice.classList.add('card__price');
+        cardBtns.classList.add('card__btns');
+        cardBuyBtn.classList.add('card__btn-buy', 'btn', 'btn-buy');
+        cardBuyBtn.setAttribute('href', '#');
+        cardBasketBtn.classList.add('card__btn-basket');
+        cardBasketBtn.setAttribute('href', '#');
+        cardBasketImg.setAttribute('src', 'img/card/basket.svg');
+        cardBasketImg.setAttribute('alt', 'basket');
 
+        cardRibbon.textContent = ribbonText;
+        cardRibbon.style.background = ribbonColor;
         cardTitle.textContent = title;
         cardDescr.textContent = description;
         cardInfoDelivery.textContent = delivery;
         cardInfoAvailability.textContent = availability;
-        cardPrice.textContent = price;
-        cardBtnBuy.textContent = 'Купить в 1 клик'; 
+        cardPrice.innerHTML = `<span>${price}</span> ₽ / шт.`;
+        cardBuyBtn.textContent = 'Купить в 1 клик';
 
-        cardBtns.append(cardBtnBuy, cardBtnBasket);
+        cardBtns.append(cardBuyBtn, cardBasketBtn);
         cardInfo.append(cardInfoDelivery, cardInfoAvailability);
         cardImgWrap.append(cardImg);
-        сardContainer.append(cardImgWrap, cardTitle, cardDescr, cardInfo, cardPrice, cardBtns);
-        сard.append(сardContainer);
-        
+        cardFavoritesLink.append(cardFavoritesImg);
+        cardBasketBtn.append(cardBasketImg);
+        сard.append(cardRibbon, cardFavoritesLink, cardImgWrap, cardTitle, cardDescr, cardInfo, cardPrice, cardBtns);
 
         return сard;
     };
@@ -160,7 +185,7 @@ const productCard = () => {
 // ================================================= functions call ================================================== 
 toggleCatalog();
 catalogSubNavigation();
-slider();
+initSlider();
 productCard();
 
 
