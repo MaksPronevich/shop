@@ -9,28 +9,28 @@
     align-items: center;
 }
 
+.header-nav {
 
-.header-nav-list {
-    display: flex;
-
+    &__list {
+        display: flex;
+    }
+    
     &__item {
         & + & {
             margin-left: 94px;
         }
+    }
 
-        &-link {
-            font-size: 1.125rem;
-            color: $dark-gray;
-            transition: $transition;
+    &__link {
+        font-size: 1.125rem;
+        color: $dark-gray;
+        transition: $transition;
 
-            &:hover {
-                color: $red;
-            }
+        &:hover {
+            color: $red;
         }
-
     }
 }
-
 
 .header-options {
     display: flex;

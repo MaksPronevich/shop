@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    margin: 80px 0 32px;
 }
 
 .section-title {
@@ -18,11 +18,16 @@
     transition: $transition;
 
     &:after {
-        content: url('../img/different/arrow-right--red.png');
+        content: url('../img/different/arrow-right.png');
         margin-left: 8px;
     }
 
     &--red {
         color: $red;
+
+        &:after {
+            content: url('../img/different/arrow-right--red.png');
+            margin-left: 8px;
+        }
     }
 }

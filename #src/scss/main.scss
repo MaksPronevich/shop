@@ -8,7 +8,6 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
-    
 }
 
 body {
@@ -42,6 +41,7 @@ a {
 @import "blocks/intro";
 @import "blocks/special-offers";
 @import "blocks/cards";
+@import "blocks/services";
 
 // @media (max-width: 1182px) {
 // 	.container {

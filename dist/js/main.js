@@ -10,8 +10,8 @@ var toggleCatalog = function toggleCatalog() {
 };
 
 var catalogSubNavigation = function catalogSubNavigation() {
-  var navLinkElems = document.querySelectorAll('.catalog-nav-list__item-link');
-  var subNavListElems = document.querySelectorAll('.catalog-sub-nav-list');
+  var navLinkElems = document.querySelectorAll('.catalog-nav__link');
+  var subNavListElems = document.querySelectorAll('.catalog-sub-nav__list');
 
   var deactivateSubNav = function deactivateSubNav() {
     subNavListElems.forEach(function (subNavListElem) {
@@ -83,9 +83,55 @@ var productCard = function productCard() {
     delivery: 'бесплатная доставка',
     availability: 'в наличии',
     price: 4900
+  }, {
+    ribbonText: 'Привезём сегодня',
+    ribbonColor: '#219653',
+    img: 'img/card/product.png',
+    title: 'Кирпич облицовочный М95 Воткинский',
+    description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+    delivery: 'бесплатная доставка',
+    availability: 'в наличии',
+    price: 4900
+  }, {
+    ribbonText: '',
+    ribbonColor: 'none',
+    img: 'img/card/product.png',
+    title: 'Кирпич облицовочный М95 Воткинский',
+    description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+    delivery: 'бесплатная доставка',
+    availability: 'в наличии',
+    price: 4900
+  }, {
+    ribbonText: 'Лидер продаж',
+    ribbonColor: '#F2994A',
+    img: 'img/card/product.png',
+    title: 'Кирпич облицовочный М95 Воткинский',
+    description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+    delivery: 'бесплатная доставка',
+    availability: 'в наличии',
+    price: 4500
+  }, {
+    ribbonText: 'Лучшая цена',
+    ribbonColor: '#D41A36',
+    img: 'img/card/product.png',
+    title: 'Кирпич облицовочный М95 Воткинский',
+    description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+    delivery: 'бесплатная доставка',
+    availability: 'в наличии',
+    price: 4500,
+    priceWithDiscount: 4300
+  }, {
+    ribbonText: '',
+    ribbonColor: 'none',
+    img: 'img/card/product.png',
+    title: 'Кирпич облицовочный М95 Воткинский',
+    description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
+    delivery: 'бесплатная доставка',
+    availability: 'в наличии',
+    price: 4900
   }];
   var fragment = document.createDocumentFragment();
-  var cont = document.querySelector('.special-offers-content');
+  var container = document.querySelector('.special-offers__content');
 
   var createCardTemplate = function createCardTemplate() {
     var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
@@ -101,7 +147,6 @@ var productCard = function productCard() {
     var сard = document.createElement('div');
     var cardRibbon = document.createElement('span');
     var cardFavoritesLink = document.createElement('a');
-    var cardFavoritesImg = document.createElement('img');
     var cardImgWrap = document.createElement('div');
     var cardImg = document.createElement('img');
     var cardTitle = document.createElement('h4');
@@ -113,16 +158,13 @@ var productCard = function productCard() {
     var cardBtns = document.createElement('div');
     var cardBuyBtn = document.createElement('a');
     var cardBasketBtn = document.createElement('a');
-    var cardBasketImg = document.createElement('img');
     сard.classList.add('card');
     cardRibbon.classList.add('card__ribbon');
     cardFavoritesLink.classList.add('card__favorites');
     cardFavoritesLink.setAttribute('href', '#');
-    cardFavoritesImg.setAttribute('src', 'img/card/favorites.svg');
-    cardFavoritesImg.setAttribute('alt', 'favorites');
     cardImgWrap.classList.add('card__img');
     cardImg.setAttribute('src', img);
-    cardImg.setAttribute('alt', 'product1');
+    cardImg.setAttribute('alt', 'Кирпич');
     cardTitle.classList.add('card__title');
     cardDescr.classList.add('card__description');
     cardInfo.classList.add('card__info');
@@ -134,8 +176,6 @@ var productCard = function productCard() {
     cardBuyBtn.setAttribute('href', '#');
     cardBasketBtn.classList.add('card__btn-basket');
     cardBasketBtn.setAttribute('href', '#');
-    cardBasketImg.setAttribute('src', 'img/card/basket.svg');
-    cardBasketImg.setAttribute('alt', 'basket');
     cardRibbon.textContent = ribbonText;
     cardRibbon.style.background = ribbonColor;
     cardTitle.textContent = title;
@@ -147,8 +187,6 @@ var productCard = function productCard() {
     cardBtns.append(cardBuyBtn, cardBasketBtn);
     cardInfo.append(cardInfoDelivery, cardInfoAvailability);
     cardImgWrap.append(cardImg);
-    cardFavoritesLink.append(cardFavoritesImg);
-    cardBasketBtn.append(cardBasketImg);
     сard.append(cardRibbon, cardFavoritesLink, cardImgWrap, cardTitle, cardDescr, cardInfo, cardPrice, cardBtns);
     return сard;
   };
@@ -156,8 +194,13 @@ var productCard = function productCard() {
   data.forEach(function (card) {
     var сard = createCardTemplate(card);
     fragment.append(сard);
-    cont.append(fragment);
+    container.append(fragment);
   });
+};
+
+var popups = function popups() {
+  var popupLinks = document.querySelectorAll('.popup-link');
+  console.log(popupLinks);
 }; // ================================================= functions call ================================================== 
 
 
@@ -165,3 +208,4 @@ toggleCatalog();
 catalogSubNavigation();
 initSlider();
 productCard();
+popups();
