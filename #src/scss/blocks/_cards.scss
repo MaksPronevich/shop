@@ -36,7 +36,7 @@
         right: 10px;
         width: 23px;
         height: 23px;
-        background: url('../img/card/favorites.png') no-repeat center center;
+        background: url('../img/card/favorites.svg') no-repeat center center;
         transition: $transition;
     }
 
@@ -107,7 +107,6 @@
         border-radius: 4px;
         padding: 6px 16px;
         background: url('../img/card/basket.svg') no-repeat center center;
-        transition: $transition;
 
         &:hover {
             background: url('../img/card/check.svg') no-repeat center center;

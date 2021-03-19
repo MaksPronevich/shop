@@ -913,7 +913,7 @@ a {
   right: 10px;
   width: 23px;
   height: 23px;
-  background: url("../img/card/favorites.png") no-repeat center center;
+  background: url("../img/card/favorites.svg") no-repeat center center;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
@@ -1000,9 +1000,6 @@ a {
   border-radius: 4px;
   padding: 6px 16px;
   background: url("../img/card/basket.svg") no-repeat center center;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
 }
 
 .card__btn-basket:hover {
@@ -1016,6 +1013,8 @@ a {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .services__item {
@@ -1038,6 +1037,14 @@ a {
 .services__item:hover .services__title,
 .services__item:hover .services__descr {
   color: #fff;
+}
+
+.services__item:hover .services__icon {
+  background-color: #9FA6EE;
+}
+
+.services__item:hover .services__icon svg path {
+  fill: #fff;
 }
 
 .services__icon {
@@ -1075,4 +1082,11 @@ a {
   transition: 0.2s;
 }
 
-.webp .card__favorites { background: url(../img/card/favorites.webp) no-repeat center center; }
+.showroom__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
