@@ -1,0 +1,28 @@
+.partners {
+    margin-top: 90px;
+}
+
+.partners-wrapper {
+    // display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 50px;
+    padding: 0px 50px;
+}
+
+.partners-slider__btn-prev,
+.partners-slider__btn-next {
+
+    &:after {
+        font-size: 30px;
+        color: $gray;
+    }
+}
+
+.partners-slider__btn-prev {
+
+}
+
+.partners-slider__btn-next {
+
+}

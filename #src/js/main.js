@@ -36,12 +36,13 @@ const catalogSubNavigation = () => {
 
 
 const initSlider = () => {
-    new Swiper('.swiper-container', {
+    new Swiper('.partners-slider', {
         loop: true,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.partners-slider__btn-prev',
+            prevEl: '.partners-slider__btn-next',
         },
+        slidesPerView: 7,
     });
 };
 
@@ -206,14 +207,12 @@ const productCard = () => {
 };
 
 
-const popups = () => {
-    const popupLinks = document.querySelectorAll('.popup-link');
+// const popups = () => {
+//     const popupLinks = document.querySelectorAll('.popup-link');
 
 
-    console.log(popupLinks);
-};
-
-
+//     console.log(popupLinks);
+// };
 
 
 
@@ -235,7 +234,7 @@ toggleCatalog();
 catalogSubNavigation();
 initSlider();
 productCard();
-popups();
+// popups();
 
 
 

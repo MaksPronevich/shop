@@ -1090,3 +1090,35 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+
+.partners {
+  margin-top: 90px;
+}
+
+.partners-wrapper {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0px 50px;
+  padding: 0px 50px;
+}
+
+.partners-slider__btn-prev:after,
+.partners-slider__btn-next:after {
+  font-size: 30px;
+  color: #7D7D7D;
+}
+
+.footer {
+  padding: 40px 0px 20px;
+  background-color: #F7F7F7;
+}
+
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
