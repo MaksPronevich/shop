@@ -1093,16 +1093,10 @@ a {
 
 .partners {
   margin-top: 90px;
+  padding-bottom: 15px;
 }
 
-.partners-wrapper {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 0px 50px;
+.partners-slider {
   padding: 0px 50px;
 }
 
@@ -1117,8 +1111,96 @@ a {
   background-color: #F7F7F7;
 }
 
-.footer__content {
+.footer__navigation-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.footer__item--center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #272727;
+  margin-bottom: 22px;
+}
+
+.footer-nav__item {
+  margin-bottom: 10px;
+}
+
+.footer-nav__item.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-nav__link {
+  color: #272727;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.footer-nav__link--underline {
+  text-decoration: underline;
+}
+
+.footer-nav__link-social {
+  margin-right: 10px;
+}
+
+.footer-nav__link:hover {
+  color: #5661CB;
+}
+
+.footer-nav__number,
+.footer-nav__city {
+  color: #272727;
+  font-weight: 500;
+}
+
+.footer-nav__working-hours {
+  color: #272727;
+  line-height: 146%;
+}
+
+.footer__information-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid #B8B8B8;
+  padding: 25px 0px 20px;
+  margin-top: 30px;
+}
+
+.footer__text {
+  font-size: 0.875rem;
+  color: #1D2B5B;
+  line-height: 150%;
+}
+
+.footer__pay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+}
+
+.footer__pay img {
+  margin: 0px 15px;
 }
