@@ -1,6 +1,7 @@
 .services__content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .services__item {
@@ -19,8 +20,18 @@
         .services__descr {
             color: $white;
         } 
+
+        .services__icon {
+            background-color: #9FA6EE;
+            svg {
+                path {
+                    fill: $white;
+                }
+            }
+        }
     }
 }
+
 
 .services__icon {
     display: flex;

@@ -36,12 +36,13 @@ var catalogSubNavigation = function catalogSubNavigation() {
 };
 
 var initSlider = function initSlider() {
-  new Swiper('.swiper-container', {
+  new Swiper('.partners-slider', {
     loop: true,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    }
+      nextEl: '.partners-slider__btn-prev',
+      prevEl: '.partners-slider__btn-next'
+    },
+    slidesPerView: 7
   });
 };
 
@@ -196,16 +197,14 @@ var productCard = function productCard() {
     fragment.append(сard);
     container.append(fragment);
   });
-};
-
-var popups = function popups() {
-  var popupLinks = document.querySelectorAll('.popup-link');
-  console.log(popupLinks);
-}; // ================================================= functions call ================================================== 
+}; // const popups = () => {
+//     const popupLinks = document.querySelectorAll('.popup-link');
+//     console.log(popupLinks);
+// };
+// ================================================= functions call ================================================== 
 
 
 toggleCatalog();
 catalogSubNavigation();
 initSlider();
-productCard();
-popups();
+productCard(); // popups();
