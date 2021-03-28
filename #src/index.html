@@ -23,17 +23,71 @@
 
     <main class="main">
         <div class="container">
-            <!-- <section class="intro">
+            <section class="intro">
                 <div class="intro-slider-wrap">
-                    <div class="swiper-container intro-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide intro-slide"></div>
-                            <div class="swiper-slide intro-slide"></div>
-                            <div class="swiper-slide intro-slide"></div>
+                    <div class="intro-slider swiper-container">
+                        <div class="intro-wrapper swiper-wrapper">
+                            <div class="intro-slider__item swiper-slide">
+                                <img src="img/photo.png" alt="Дом из нашего кирпича">
+                                <span class="product__ribbon product__ribbon--red">Лучшая цена</span>
+                                <div class="intro-description">
+                                    <h4 class="product__title product__title--white">Кирпич облицовочный М95 <br> Воткинский</h4>
+                                    <p class="product__description product__description--white">Кол-во на поддоне, шт. - 297 <br> Формат одинарный</p>
+                                    <div class="product__info">
+                                        <p class="product__delivery product__delivery--white">бесплатная доставка</p>
+                                        <p class="product__availability product__availability--white">в наличии</p>
+                                    </div>
+                                    <div class="product__prices">
+                                        <div class="product__price product__price--white"><span>4500</span> &#x20bd; / шт.</div>
+                                    </div>
+                                    <div class="product__btns">
+                                        <a href="#" class="btn btn-buy btn-buy--white">Купить в 1 клик</a>
+                                        <a href="#" class="product__btn-cart product__btn-cart--white"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro-slider__item swiper-slide">
+                                <img src="img/photo.png" alt="Дом из нашего кирпича">
+                                <span class="product__ribbon product__ribbon--red">Лучшая цена</span>
+                                <div class="intro-description">
+                                    <h4 class="product__title product__title--white">Кирпич облицовочный М95 <br> Воткинский</h4>
+                                    <p class="product__description product__description--white">Кол-во на поддоне, шт. - 297 <br> Формат одинарный</p>
+                                    <div class="product__info">
+                                        <p class="product__delivery product__delivery--white">бесплатная доставка</p>
+                                        <p class="product__availability product__availability--white">в наличии</p>
+                                    </div>
+                                    <div class="product__prices">
+                                        <div class="product__price product__price--white"><span>4500</span> &#x20bd; / шт.</div>
+                                    </div>
+                                    <div class="product__btns">
+                                        <a href="#" class="btn btn-buy btn-buy--white">Купить в 1 клик</a>
+                                        <a href="#" class="product__btn-cart product__btn-cart--white"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro-slider__item swiper-slide">
+                                <img src="img/photo.png" alt="Дом из нашего кирпича">
+                                <span class="product__ribbon product__ribbon--red">Лучшая цена</span>
+                                <div class="intro-description">
+                                    <h4 class="product__title product__title--white">Кирпич облицовочный М95 <br> Воткинский</h4>
+                                    <p class="product__description product__description--white">Кол-во на поддоне, шт. - 297 <br> Формат одинарный</p>
+                                    <div class="product__info">
+                                        <p class="product__delivery product__delivery--white">бесплатная доставка</p>
+                                        <p class="product__availability product__availability--white">в наличии</p>
+                                    </div>
+                                    <div class="product__prices">
+                                        <div class="product__price product__price--white"><span>4500</span> &#x20bd; / шт.</div>
+                                    </div>
+                                    <div class="product__btns">
+                                        <a href="#" class="btn btn-buy btn-buy--white">Купить в 1 клик</a>
+                                        <a href="#" class="product__btn-cart product__btn-cart--white"></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
 
             <section class="special-offers">
                 <div class="section-header">
@@ -41,7 +95,7 @@
                     <a href="#" class="section-link section-link--red">Перейти в раздел скидок</a>
                 </div>
                 <div class="special-offers__content">
-                    @@include('common/cards/product-card.html', {
+                    @@include('common/product/product-card.html', {
                     'text': 'Лидер продаж'
                     })
                 </div>
@@ -51,6 +105,18 @@
                 <div class="section-header">
                     <h2 class="section-title">Проект из наших стройматериалов</h2>
                     <a href="#" class="section-link">Смотреть все проекты</a>
+                </div>
+                <div class="projects__content">
+                    <div class="projects__item">
+                        <img src="img/projects/project1.png" alt="Проект 1">
+                        <div class="project-description">
+                            <h3 class="project-description__title">Малоэтажные дома</h3>
+                            <p class="project-description__text">
+                                Комплекс услуг по доставке товара на Ваш строительный объект. Комплекс услуг по доставке.
+                            </p>
+                            <a href="#" class="project-description__btn">Перейти к объекту</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -175,25 +241,25 @@
                 <div class="partners-slider swiper-container">
                     <div class="partners-wrapper swiper-wrapper">
                         <div class="partners-slider__item swiper-slide">
-                            <img src="img/partners/partner1.png" alt="Партнёр">
+                            <img src="img/partners/ruflex.png" alt="Ruflex">
                         </div>
                         <div class="partners-slider__item swiper-slide">
-                            <img src="img/partners/partner2.png" alt="Партнёр">
+                            <img src="img/partners/alpina.png" alt="Alpina">
                         </div>
                         <div class="partners-slider__item swiper-slide">
-                            <img src="img/partners/partner3.png" alt="Партнёр">
+                            <img src="img/partners/quick-mix.png" alt="Quick Mix">
                         </div>
                         <div class="partners-slider__item swiper-slide">
-                            <img src="img/partners/partner4.png" alt="Партнёр">
+                            <img src="img/partners/feldhaus.png" alt="Fieldhause Klinker">
                         </div>
                         <div class="partners-slider__item swiper-slide">
-                            <img src="img/partners/partner5.png" alt="Партнёр">
+                            <img src="img/partners/unis.png" alt="Unis">
                         </div>
                         <div class="partners-slider__item swiper-slide">
-                            <img src="img/partners/partner6.png" alt="Партнёр">
+                            <img src="img/partners/terca.png" alt="Terca">
                         </div>
                         <div class="partners-slider__item swiper-slide">
-                            <img src="img/partners/partner7.png" alt="Партнёр">
+                            <img src="img/partners/abk.png" alt="ABK">
                         </div>
                     </div>
                     <div class="partners-slider__btn-prev swiper-button-prev"></div>

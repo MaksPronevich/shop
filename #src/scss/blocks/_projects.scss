@@ -1,0 +1,37 @@
+.projects__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.projects__item {
+    position: relative;
+    transition: $transition;
+
+    &:hover {
+        .project-description {
+            opacity: 0.9;
+        }
+    }
+}
+.project-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px 18px;
+    background-color: $blue;
+    color: $white;
+    opacity: 0;
+    transition: $transition;
+    // border-right: 1px solid $white;
+    // border-width: 10px;
+    
+
+    &__title {
+    }
+    &__text {
+    }
+    &__btn {
+    }
+}
