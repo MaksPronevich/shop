@@ -3,10 +3,30 @@
 }
 
 .intro-slider-wrap {
-    width: 1000px;
+    width: 1035px;
     margin-left: auto;
 }
 
-.intro-slide {
-    
+.intro-slider__item  {
+    position: relative;
+    border-radius: 12px;
+}
+
+.intro-description {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 40px 60px 60px 55px;
+    background-color: $blue;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+
+    &__title {
+        font-size: 1.375rem;
+        color: $white;
+        font-weight: $fw-medium;
+        line-height: 120%;
+    }
 }

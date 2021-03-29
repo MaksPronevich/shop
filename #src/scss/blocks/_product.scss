@@ -1,4 +1,4 @@
-.card {
+.product {
     width: 245px;
     border: 1px solid rgba(#868686, .3);
     border-radius: 6px;
@@ -36,7 +36,7 @@
         right: 10px;
         width: 23px;
         height: 23px;
-        background: url('../img/card/favorites.svg') no-repeat center center;
+        background: url('../img/product/favorites.svg') no-repeat center center;
         transition: $transition;
     }
 
@@ -52,6 +52,11 @@
         color: $black;
         font-weight: $fw-medium;
         line-height: 120%;
+        
+        &--white {
+            color: $white;
+            font-size: 1.375rem;
+        }
     }
 
     &__description {
@@ -60,6 +65,10 @@
         font-weight: $fw-light;
         margin: 8px 0px;
         line-height: 115%;
+
+        &--white {
+            color: $white;
+        }
     }
 
     &__info{
@@ -73,10 +82,18 @@
         color: $gray;
         font-weight: $fw-light;
         text-decoration: underline;
+
+        &--white {
+            color: $white;
+        }
     }
 
     &__availability {
         color: $green;
+
+        &--white {
+            color: $white;
+        }
     }
 
     &__prices {
@@ -92,6 +109,10 @@
             font-size: 1.25rem;
             font-weight: $fw-medium;
         }
+
+        &--white {
+            color: $white;
+        }
     }
 
     &__btns {
@@ -100,16 +121,25 @@
         align-items: center;
     }
 
-    &__btn-basket {
+    &__btn-cart {
         width: 55px;
         height: 30px;
         border: 1px solid $blue;
         border-radius: 4px;
         padding: 6px 16px;
-        background: url('../img/card/basket.svg') no-repeat center center;
+        background: url('../img/product/cart.svg') no-repeat center center;
 
         &:hover {
-            background: url('../img/card/check.svg') no-repeat center center;
+            background: url('../img/product/check.svg') no-repeat center center;
+        }
+
+        &--white {
+            border: 1px solid $white;
+            background: url('../img/product/cart-white.svg') no-repeat center center;
+
+            &:hover {
+                background: url('../img/product/check-white.svg') no-repeat center center;
+            }
         }
     }
 }

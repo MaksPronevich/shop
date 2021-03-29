@@ -5,6 +5,10 @@
     border-radius: 4px;
     transition: $transition;
 
+    &:hover {
+        background-color: darken($blue, 5);
+    }
+
     &-catalog {
         font-size: 1.125rem;
         padding: 10px 160px 10px 70px ;
@@ -27,9 +31,27 @@
     &-buy {
         font-size: 0.875rem;
         padding: 9px 27px;
+
+        &--white {
+            background-color: $white;
+            color: $black;
+
+            &:hover {
+                color: $white;
+            }
+        }
     }
 
-    &:hover {
-        background-color: darken($blue, 5);
+    &--show-object {
+        padding: 9px 16px;
+        color: $white;
+        font-size: 0.875rem;
+        border: 1px solid $white;
+        background-color: none;
+
+        &:hover {
+            background-color: $white;
+            color: $blue;
+        }
     }
 }

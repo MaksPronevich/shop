@@ -1,6 +1,6 @@
 'use strict';
-// ================================================= functions ==================================================    
-const toggleCatalog = () => {
+
+{
     const catalogBtnElem = document.querySelector('.btn-catalog');
     const catalogElem = document.querySelector('.catalog-wrap');
 
@@ -8,16 +8,14 @@ const toggleCatalog = () => {
         catalogElem.classList.toggle('active');
         e.preventDefault();
     });
-};
+}
 
 
-const catalogSubNavigation = () => {
+{
     const navLinkElems = document.querySelectorAll('.catalog-nav__link');
     const subNavListElems = document.querySelectorAll('.catalog-sub-nav__list');
 
-    const deactivateSubNav = () => {
-        subNavListElems.forEach(subNavListElem => subNavListElem.classList.remove('active'));
-    };
+    const deactivateSubNav = () => subNavListElems.forEach(subNavListElem => subNavListElem.classList.remove('active'));
 
     navLinkElems.forEach((navLinkElem, i) => {
         navLinkElem.addEventListener("mouseover", () => {
@@ -32,27 +30,40 @@ const catalogSubNavigation = () => {
             deactivateSubNav();
         }
     });
-};
+}
 
 
-const initSlider = () => {
-    new Swiper('.partners-slider', {
+{
+    new Swiper('.intro-slider', {
         loop: true,
-        navigation: {
-            nextEl: '.partners-slider__btn-prev',
-            prevEl: '.partners-slider__btn-next',
+        slidesPerView: 1,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
         },
-        slidesPerView: 7,
     });
-};
+}
 
 
-const productCard = () => {
+{
+    new Swiper('.partners-slider', {
+        loop: false,
+        navigation: {
+            nextEl: '.partners-slider__btn-next',
+            prevEl: '.partners-slider__btn-prev',
+        },
+        slidesPerView: 6,
+    });
+}
+
+
+{
     const data = [
         {
+            id: '01',
             ribbonText: 'Лидер продаж',
             ribbonColor: '#F2994A',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -60,9 +71,10 @@ const productCard = () => {
             price: 4500,
         },
         {
+            id: '02',
             ribbonText: 'Лучшая цена',
             ribbonColor: '#D41A36',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -71,9 +83,10 @@ const productCard = () => {
             priceWithDiscount: 4300,
         },
         {
+            id: '03',
             ribbonText: 'Привезём сегодня',
             ribbonColor: '#219653',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -81,9 +94,10 @@ const productCard = () => {
             price: 4900,
         },
         {
+            id: '04',
             ribbonText: '',
             ribbonColor: 'none',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -91,9 +105,10 @@ const productCard = () => {
             price: 4900,
         },
         {
+            id: '05',
             ribbonText: 'Привезём сегодня',
             ribbonColor: '#219653',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -101,9 +116,10 @@ const productCard = () => {
             price: 4900,
         },
         {
+            id: '06',
             ribbonText: '',
             ribbonColor: 'none',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -111,9 +127,10 @@ const productCard = () => {
             price: 4900,
         },
         {
+            id: '07',
             ribbonText: 'Лидер продаж',
             ribbonColor: '#F2994A',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -121,9 +138,10 @@ const productCard = () => {
             price: 4500,
         },
         {
+            id: '08',
             ribbonText: 'Лучшая цена',
             ribbonColor: '#D41A36',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -132,9 +150,10 @@ const productCard = () => {
             priceWithDiscount: 4300,
         },
         {
+            id: '09',
             ribbonText: '',
             ribbonColor: 'none',
-            img: 'img/card/product.png',
+            img: 'img/product/product.png',
             title: 'Кирпич облицовочный М95 Воткинский',
             description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
             delivery: 'бесплатная доставка',
@@ -160,26 +179,26 @@ const productCard = () => {
         const cardPrice = document.createElement('div');
         const cardBtns = document.createElement('div');
         const cardBuyBtn = document.createElement('a');
-        const cardBasketBtn = document.createElement('a');
+        const cardCartBtn = document.createElement('a');
 
-        сard.classList.add('card');
-        cardRibbon.classList.add('card__ribbon');
-        cardFavoritesLink.classList.add('card__favorites');
+        сard.classList.add('product');
+        cardRibbon.classList.add('product__ribbon');
+        cardFavoritesLink.classList.add('product__favorites');
         cardFavoritesLink.setAttribute('href', '#');
-        cardImgWrap.classList.add('card__img');
+        cardImgWrap.classList.add('product__img');
         cardImg.setAttribute('src', img);
         cardImg.setAttribute('alt', 'Кирпич');
-        cardTitle.classList.add('card__title');
-        cardDescr.classList.add('card__description');
-        cardInfo.classList.add('card__info');
-        cardInfoDelivery.classList.add('card__delivery');
-        cardInfoAvailability.classList.add('card__availability');
-        cardPrice.classList.add('card__price');
-        cardBtns.classList.add('card__btns');
-        cardBuyBtn.classList.add('card__btn-buy', 'btn', 'btn-buy');
+        cardTitle.classList.add('product__title');
+        cardDescr.classList.add('product__description');
+        cardInfo.classList.add('product__info');
+        cardInfoDelivery.classList.add('product__delivery');
+        cardInfoAvailability.classList.add('product__availability');
+        cardPrice.classList.add('product__price');
+        cardBtns.classList.add('product__btns');
+        cardBuyBtn.classList.add('product__btn-buy', 'btn', 'btn-buy');
         cardBuyBtn.setAttribute('href', '#');
-        cardBasketBtn.classList.add('card__btn-basket');
-        cardBasketBtn.setAttribute('href', '#');
+        cardCartBtn.classList.add('product__btn-cart');
+        cardCartBtn.setAttribute('href', '#');
 
         cardRibbon.textContent = ribbonText;
         cardRibbon.style.background = ribbonColor;
@@ -190,7 +209,7 @@ const productCard = () => {
         cardPrice.innerHTML = `<span>${price}</span> ₽ / шт.`;
         cardBuyBtn.textContent = 'Купить в 1 клик';
 
-        cardBtns.append(cardBuyBtn, cardBasketBtn);
+        cardBtns.append(cardBuyBtn, cardCartBtn);
         cardInfo.append(cardInfoDelivery, cardInfoAvailability);
         cardImgWrap.append(cardImg);
         сard.append(cardRibbon, cardFavoritesLink, cardImgWrap, cardTitle, cardDescr, cardInfo, cardPrice, cardBtns);
@@ -204,38 +223,4 @@ const productCard = () => {
         fragment.append(сard);
         container.append(fragment);
     });
-};
-
-
-// const popups = () => {
-//     const popupLinks = document.querySelectorAll('.popup-link');
-
-
-//     console.log(popupLinks);
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ================================================= functions call ================================================== 
-toggleCatalog();
-catalogSubNavigation();
-initSlider();
-productCard();
-// popups();
-
-
-
-
+}

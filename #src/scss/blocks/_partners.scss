@@ -8,7 +8,7 @@
 }
 
 .partners-wrapper {
-   
+    justify-content: space-between;
 }
 
 .partners-slider__btn-prev,
@@ -19,7 +19,7 @@
         color: $gray;
     }
 }
-
+ 
 .partners-slider__btn-prev {
 
 }

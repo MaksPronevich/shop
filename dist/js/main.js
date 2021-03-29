@@ -1,20 +1,19 @@
-'use strict'; // ================================================= functions ==================================================    
+'use strict';
 
-var toggleCatalog = function toggleCatalog() {
+{
   var catalogBtnElem = document.querySelector('.btn-catalog');
   var catalogElem = document.querySelector('.catalog-wrap');
   catalogBtnElem.addEventListener("click", function (e) {
     catalogElem.classList.toggle('active');
     e.preventDefault();
   });
-};
-
-var catalogSubNavigation = function catalogSubNavigation() {
+}
+{
   var navLinkElems = document.querySelectorAll('.catalog-nav__link');
   var subNavListElems = document.querySelectorAll('.catalog-sub-nav__list');
 
   var deactivateSubNav = function deactivateSubNav() {
-    subNavListElems.forEach(function (subNavListElem) {
+    return subNavListElems.forEach(function (subNavListElem) {
       return subNavListElem.classList.remove('active');
     });
   };
@@ -33,33 +32,43 @@ var catalogSubNavigation = function catalogSubNavigation() {
       deactivateSubNav();
     }
   });
-};
-
-var initSlider = function initSlider() {
-  new Swiper('.partners-slider', {
+}
+{
+  new Swiper('.intro-slider', {
     loop: true,
-    navigation: {
-      nextEl: '.partners-slider__btn-prev',
-      prevEl: '.partners-slider__btn-next'
-    },
-    slidesPerView: 7
+    slidesPerView: 1,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    }
   });
-};
-
-var productCard = function productCard() {
+}
+{
+  new Swiper('.partners-slider', {
+    loop: false,
+    navigation: {
+      nextEl: '.partners-slider__btn-next',
+      prevEl: '.partners-slider__btn-prev'
+    },
+    slidesPerView: 6
+  });
+}
+{
   var data = [{
+    id: '01',
     ribbonText: 'Лидер продаж',
     ribbonColor: '#F2994A',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
     availability: 'в наличии',
     price: 4500
   }, {
+    id: '02',
     ribbonText: 'Лучшая цена',
     ribbonColor: '#D41A36',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
@@ -67,54 +76,60 @@ var productCard = function productCard() {
     price: 4500,
     priceWithDiscount: 4300
   }, {
+    id: '03',
     ribbonText: 'Привезём сегодня',
     ribbonColor: '#219653',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
     availability: 'в наличии',
     price: 4900
   }, {
+    id: '04',
     ribbonText: '',
     ribbonColor: 'none',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
     availability: 'в наличии',
     price: 4900
   }, {
+    id: '05',
     ribbonText: 'Привезём сегодня',
     ribbonColor: '#219653',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
     availability: 'в наличии',
     price: 4900
   }, {
+    id: '06',
     ribbonText: '',
     ribbonColor: 'none',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
     availability: 'в наличии',
     price: 4900
   }, {
+    id: '07',
     ribbonText: 'Лидер продаж',
     ribbonColor: '#F2994A',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
     availability: 'в наличии',
     price: 4500
   }, {
+    id: '08',
     ribbonText: 'Лучшая цена',
     ribbonColor: '#D41A36',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
@@ -122,9 +137,10 @@ var productCard = function productCard() {
     price: 4500,
     priceWithDiscount: 4300
   }, {
+    id: '09',
     ribbonText: '',
     ribbonColor: 'none',
-    img: 'img/card/product.png',
+    img: 'img/product/product.png',
     title: 'Кирпич облицовочный М95 Воткинский',
     description: 'Кол-во на поддоне, шт. - 297 Формат одинарный',
     delivery: 'бесплатная доставка',
@@ -158,25 +174,25 @@ var productCard = function productCard() {
     var cardPrice = document.createElement('div');
     var cardBtns = document.createElement('div');
     var cardBuyBtn = document.createElement('a');
-    var cardBasketBtn = document.createElement('a');
-    сard.classList.add('card');
-    cardRibbon.classList.add('card__ribbon');
-    cardFavoritesLink.classList.add('card__favorites');
+    var cardCartBtn = document.createElement('a');
+    сard.classList.add('product');
+    cardRibbon.classList.add('product__ribbon');
+    cardFavoritesLink.classList.add('product__favorites');
     cardFavoritesLink.setAttribute('href', '#');
-    cardImgWrap.classList.add('card__img');
+    cardImgWrap.classList.add('product__img');
     cardImg.setAttribute('src', img);
     cardImg.setAttribute('alt', 'Кирпич');
-    cardTitle.classList.add('card__title');
-    cardDescr.classList.add('card__description');
-    cardInfo.classList.add('card__info');
-    cardInfoDelivery.classList.add('card__delivery');
-    cardInfoAvailability.classList.add('card__availability');
-    cardPrice.classList.add('card__price');
-    cardBtns.classList.add('card__btns');
-    cardBuyBtn.classList.add('card__btn-buy', 'btn', 'btn-buy');
+    cardTitle.classList.add('product__title');
+    cardDescr.classList.add('product__description');
+    cardInfo.classList.add('product__info');
+    cardInfoDelivery.classList.add('product__delivery');
+    cardInfoAvailability.classList.add('product__availability');
+    cardPrice.classList.add('product__price');
+    cardBtns.classList.add('product__btns');
+    cardBuyBtn.classList.add('product__btn-buy', 'btn', 'btn-buy');
     cardBuyBtn.setAttribute('href', '#');
-    cardBasketBtn.classList.add('card__btn-basket');
-    cardBasketBtn.setAttribute('href', '#');
+    cardCartBtn.classList.add('product__btn-cart');
+    cardCartBtn.setAttribute('href', '#');
     cardRibbon.textContent = ribbonText;
     cardRibbon.style.background = ribbonColor;
     cardTitle.textContent = title;
@@ -185,7 +201,7 @@ var productCard = function productCard() {
     cardInfoAvailability.textContent = availability;
     cardPrice.innerHTML = "<span>".concat(price, "</span> \u20BD / \u0448\u0442.");
     cardBuyBtn.textContent = 'Купить в 1 клик';
-    cardBtns.append(cardBuyBtn, cardBasketBtn);
+    cardBtns.append(cardBuyBtn, cardCartBtn);
     cardInfo.append(cardInfoDelivery, cardInfoAvailability);
     cardImgWrap.append(cardImg);
     сard.append(cardRibbon, cardFavoritesLink, cardImgWrap, cardTitle, cardDescr, cardInfo, cardPrice, cardBtns);
@@ -197,14 +213,4 @@ var productCard = function productCard() {
     fragment.append(сard);
     container.append(fragment);
   });
-}; // const popups = () => {
-//     const popupLinks = document.querySelectorAll('.popup-link');
-//     console.log(popupLinks);
-// };
-// ================================================= functions call ================================================== 
-
-
-toggleCatalog();
-catalogSubNavigation();
-initSlider();
-productCard(); // popups();
+}

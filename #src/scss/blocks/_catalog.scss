@@ -8,7 +8,7 @@
     top: 40px;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 5;
 
     &.active {
         display: block;
@@ -81,12 +81,14 @@
     right: -350px;
     bottom: 0;
     border-radius: 4px;
+    
     // border-left: 1px solid #D3D3D3;
 
     &__list {
         display: none;
         padding: 28px 15px;
         box-shadow: 0px 1px 5px rgba(#D0D0D0, 25%);
+        background-color: $white;
 
         &.active {
             display: block;
