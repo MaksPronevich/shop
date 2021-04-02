@@ -10,7 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.12.13",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "browser-sync": "^2.26.12",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -30,6 +32,7 @@
     "webp-converter": "^2.2.3"
   },
   "dependencies": {
+    "@babel/runtime": "^7.13.10",
     "gulp-html-beautify": "^1.0.1"
   }
 }

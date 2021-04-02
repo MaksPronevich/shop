@@ -1,0 +1,103 @@
+[
+    {
+        "id": "01",
+        "ribbonText": "Лидер продаж",
+        "ribbonColor": "#F2994A",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4500
+    },
+    {
+        "id": "02",
+        "ribbonText": "Лучшая цена",
+        "ribbonColor": "#D41A36",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4500,
+        "priceWithDiscount": 4300
+    },
+    {
+        "id": "03",
+        "ribbonText": "Привезём сегодня",
+        "ribbonColor": "#219653",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4900
+    },
+    {
+        "id": "04",
+        "ribbonText": "",
+        "ribbonColor": "none",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4900
+    },
+    {
+        "id": "05",
+        "ribbonText": "Привезём сегодня",
+        "ribbonColor": "#219653",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4900
+    },
+    {
+        "id": "06",
+        "ribbonText": "",
+        "ribbonColor": "none",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4900
+    },
+    {
+        "id": "07",
+        "ribbonText": "Лидер продаж",
+        "ribbonColor": "#F2994A",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4500
+    },
+    {
+        "id": "08",
+        "ribbonText": "Лучшая цена",
+        "ribbonColor": "#D41A36",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4500,
+        "priceWithDiscount": 4300
+    },
+    {
+        "id": "09",
+        "ribbonText": "",
+        "ribbonColor": "none",
+        "img": "img/product/product.png",
+        "title": "Кирпич облицовочный М95 Воткинский",
+        "description": "Кол-во на поддоне, шт. - 297 Формат одинарный",
+        "delivery": "бесплатная доставка",
+        "availability": "в наличии",
+        "price": 4900
+    }
+]

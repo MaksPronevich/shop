@@ -141,7 +141,7 @@
                     <div class="projects__item">
                         <img src="img/projects/project3.png" alt="Проект 3">
                         <div class="project-description">
-                            <h3 class="project-description__title">Малоэтажные дома</h3>
+                            <h3 class="project-description__title">Многоэтажные дома</h3>
                             <p class="project-description__text">
                                 Комплекс услуг по доставке товара на Ваш строительный объект. Комплекс услуг по
                                 доставке.
@@ -305,8 +305,18 @@
 
     <div class="popup">
         <div class="popup__body">
+            <a href="#" class="popup__close">&times;</a>
             <div class="popup__content">
-
+                <h3 class="popup__title">Заказать обратный звонок</h3>
+                <form class="popup__form">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон" required>
+                    <div class="pupup__label">
+                        <label for="checkbox">Я ознакомлен с <a href="#">Политикой безопасности</a></label>
+                        <input id="checkbox" type="checkbox" required>
+                    </div>
+                    <button type="submit" class="btn btn-form">Отправить</button>
+                </form>
             </div>
         </div>
     </div>

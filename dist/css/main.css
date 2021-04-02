@@ -517,9 +517,9 @@ a {
 .header-nav__link {
   font-size: 1.125rem;
   color: #494949;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .header-nav__link:hover {
@@ -545,9 +545,9 @@ a {
 .header-contacts__callback {
   color: #5661CB;
   text-decoration: underline;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .header-contacts__callback:hover {
@@ -588,9 +588,9 @@ a {
   font-weight: 500;
   color: #494949;
   text-transform: uppercase;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .option-nav__link:hover {
@@ -649,9 +649,9 @@ a {
   background-color: #5661CB;
   color: #fff;
   border-radius: 4px;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .btn:hover {
@@ -675,6 +675,11 @@ a {
 .btn-order {
   font-size: 1.125rem;
   padding: 10px 36px;
+}
+
+.btn-form {
+  padding: 11px 0px;
+  border: none;
 }
 
 .btn-buy {
@@ -727,9 +732,9 @@ a {
   color: #5661CB;
   font-weight: 500;
   text-decoration: underline;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .section-link:after {
@@ -744,6 +749,98 @@ a {
 .section-link--red:after {
   content: url("../img/different/arrow-right--red.png");
   margin-left: 8px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(39, 39, 39, 0.6);
+}
+
+.popup.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.popup__body {
+  background-color: #fff;
+  border-radius: 16px;
+  -webkit-box-shadow: 0px 0px 10px #5661CB;
+  box-shadow: 0px 0px 10px #5661CB;
+  position: relative;
+}
+
+.popup__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  color: #7D7D7D;
+}
+
+.popup__content {
+  padding: 50px 70px;
+}
+
+.popup__title {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #272727;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.popup__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.popup__form input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #272727;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  background-color: #F2F3F7;
+  border: none;
+  outline: none;
+  padding: 15px;
+}
+
+.popup__form label {
+  font-size: 0.6875rem;
+  color: #7D7D7D;
+}
+
+.popup__form label a {
+  color: #5661CB;
+}
+
+.pupup__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .catalog {
@@ -783,9 +880,9 @@ a {
   display: block;
   position: relative;
   color: #272727;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .catalog-nav__link--red {
@@ -863,9 +960,9 @@ a {
 
 .catalog-sub-nav__link {
   color: #272727;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .catalog-sub-nav__link:hover {
@@ -961,9 +1058,9 @@ a {
   width: 23px;
   height: 23px;
   background: url("../img/product/favorites.svg") no-repeat center center;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .product__img {
@@ -1098,9 +1195,9 @@ a {
 
 .projects__item {
   position: relative;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .projects__item img {
@@ -1108,7 +1205,7 @@ a {
 }
 
 .projects__item:hover .project-description {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .project-description {
@@ -1117,25 +1214,26 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 4;
   padding: 12px 18px;
   background-color: #5661CB;
   color: #fff;
   opacity: 0;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
   border-radius: 12px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .project-description__title {
   font-size: 1.375rem;
   font-weight: 500;
-  margin-top: 16px;
+  margin-top: 26px;
 }
 
 .project-description__text {
   line-height: 145%;
-  margin: 16px 0px;
+  margin: 26px 0px;
   font-weight: 300;
   font-size: 0.875rem;
 }
@@ -1159,9 +1257,9 @@ a {
   -webkit-box-shadow: 0px 1px 20px #d0d0d0;
   box-shadow: 0px 1px 20px #d0d0d0;
   background-color: #fff;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .services__item:hover {
@@ -1202,18 +1300,18 @@ a {
   font-weight: 700;
   color: #272727;
   margin: 16px 0px 12px;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .services__descr {
   font-size: 0.875rem;
   color: #494949;
   line-height: 140%;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .showroom__content {
@@ -1288,9 +1386,9 @@ a {
 
 .footer-nav__link {
   color: #272727;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .footer-nav__link--underline {

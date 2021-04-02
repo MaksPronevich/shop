@@ -39,8 +39,8 @@ let { src, dest } = require('gulp'),
     webp = require("gulp-webp"),
     webphtml = require("gulp-webp-html"),
     webpcss = require("gulp-webpcss"),
-    htmlbeautify = require('gulp-html-beautify');
-const babel = require('gulp-babel');
+    htmlbeautify = require('gulp-html-beautify'),
+    babel = require('gulp-babel');
 
 function browserSync(params) {
     browsersync.init({
@@ -90,7 +90,7 @@ function css() {
 function js() {
     return src(path.src.js)
         .pipe(babel({
-            presets: ["@babel/preset-env"]
+            presets: ["@babel/preset-env"],
         }))
         .pipe(fileinclude())
         .pipe(dest(path.build.js))
