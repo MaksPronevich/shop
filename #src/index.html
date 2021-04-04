@@ -258,10 +258,10 @@
                 </div>
                 <div class="showroom__content">
                     <div class="showroom__item">
-                        <img src="img/showroom/showroom1.png" alt="Фото1">
+                        <img src="img/showroom/showroom1.png" loading='lazy' alt="Фото1">
                     </div>
                     <div class="showroom__item">
-                        <img src="img/showroom/showroom2.png" alt="Фото2">
+                        <img src="img/showroom/showroom2.png" loading='lazy' alt="Фото2">
                     </div>
                     <div class="showroom__item">
                         <img src="img/showroom/showroom3.png" alt="Фото3">
@@ -303,17 +303,36 @@
 
     @@include('common/footer.html')
 
-    <div class="popup">
+    <div class="popup" id="popup1">
+       
         <div class="popup__body">
             <a href="#" class="popup__close">&times;</a>
             <div class="popup__content">
                 <h3 class="popup__title">Заказать обратный звонок</h3>
+                <form action="index.php" class="popup__form">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон" required>
+                    <div class="pupup__label">
+                        <label for="checkbox2">Я ознакомлен с <a href="#">Политикой безопасности</a></label>
+                        <input type="checkbox" required>
+                    </div>
+                    <button type="submit" class="btn btn-form">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup2">
+        <div class="popup__body">
+            <a href="#" class="popup__close">&times;</a>
+            <div class="popup__content">
+                <h3 class="popup__title">Оптовый заказ</h3>
                 <form class="popup__form">
                     <input type="text" placeholder="Имя" required>
                     <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон" required>
                     <div class="pupup__label">
-                        <label for="checkbox">Я ознакомлен с <a href="#">Политикой безопасности</a></label>
-                        <input id="checkbox" type="checkbox" required>
+                        <label for="checkbox1">Я ознакомлен с <a href="#">Политикой безопасности</a></label>
+                        <input id="checkbox1" type="checkbox" required>
                     </div>
                     <button type="submit" class="btn btn-form">Отправить</button>
                 </form>

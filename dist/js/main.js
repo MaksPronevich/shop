@@ -1,5 +1,13 @@
 'use strict';
 
+var bodyLock = function bodyLock() {
+  document.body.classList.add('lock');
+};
+
+var bodyUnLock = function bodyUnLock() {
+  document.body.classList.remove('lock');
+};
+
 {
   var catalogBtnElem = document.querySelector('.btn-catalog');
   var catalogElem = document.querySelector('.catalog-wrap');
@@ -51,6 +59,39 @@
       prevEl: '.partners-slider__btn-prev'
     },
     slidesPerView: 6
+  });
+}
+{
+  var popupLinkElems = document.querySelectorAll('.popup-link');
+  var popupElems = document.querySelectorAll('.popup');
+
+  var popupOpen = function popupOpen(curentPopup) {
+    curentPopup.classList.add('open');
+  };
+
+  var popupClose = function popupClose(popupElem) {
+    popupElem.classList.remove('open');
+  };
+
+  popupLinkElems.forEach(function (popupLinkElem) {
+    return popupLinkElem.addEventListener("click", function (e) {
+      var popupName = popupLinkElem.getAttribute('href').replace('#', '');
+      var curentPopup = document.getElementById(popupName);
+      popupOpen(curentPopup);
+      bodyLock();
+      e.preventDefault();
+    });
+  });
+  popupElems.forEach(function (popupElem) {
+    return popupElem.addEventListener("click", function (e) {
+      var target = e.target;
+      e.preventDefault();
+
+      if (target.classList.contains('open') || target.classList.contains('popup__close')) {
+        popupClose(popupElem);
+        bodyUnLock();
+      }
+    });
   });
 } // const getProducts = async () => {
 //     const result = await fetch('db/db.json');
@@ -225,25 +266,3 @@
 //         container.append(fragment);
 //     });
 // }
-
-{
-  var popupLink = document.querySelector('.popup-link');
-  var popup = document.querySelector('.popup');
-
-  var modalClose = function modalClose() {
-    popup.classList.remove('open');
-  };
-
-  var modalOpen = function modalOpen() {
-    popup.classList.add('open');
-  };
-
-  popupLink.addEventListener("click", modalOpen);
-  popup.addEventListener("click", function (e) {
-    var target = e.target;
-
-    if (target.classList.contains('open') || target.classList.contains('popup__close')) {
-      modalClose();
-    }
-  });
-}

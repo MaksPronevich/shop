@@ -5,10 +5,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 10;
     justify-content: center;
     align-items: center;
-    background-color: rgba($black, .6);
+    background-color: rgba($black, .9);
 
     &.open {
         display: flex;
@@ -47,15 +47,19 @@
     flex-direction: column;
 
     input {
-        font-family: 'Roboto', sans-serif;
+        margin-bottom: 15px;
+    }
+
+    input[type=text],
+    input[type=tel] {
+        // font-family: 'Roboto', sans-serif;
         font-size: 0.75rem;
         font-weight: $fw-light;
         color: $black;
-        margin-bottom: 15px;
+        width: 310px;
         border-radius: 6px;
         background-color: #F2F3F7;
         border: none;
-        outline: none;
         padding: 15px;
     }
 
