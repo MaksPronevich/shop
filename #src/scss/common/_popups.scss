@@ -51,7 +51,8 @@
     }
 
     input[type=text],
-    input[type=tel] {
+    input[type=tel],
+    input[type=number] {
         // font-family: 'Roboto', sans-serif;
         font-size: 0.75rem;
         font-weight: $fw-light;
@@ -77,4 +78,26 @@
     display: flex;
     justify-content: space-between;
     // align-items: center;
+}
+
+
+.calculation-result {
+    margin-top: 20px;
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: $fw-regular;
+        color: $black;
+    }
+}
+
+.quantity,
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.total {
+    color: $blue;
 }

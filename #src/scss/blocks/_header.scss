@@ -4,30 +4,26 @@
 }
 
 .header-wrap {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
     align-items: center;
+    gap: 4rem;
 }
 
 .header-nav {
 
     &__list {
         display: flex;
+        justify-content: space-around;
     }
     
-    &__item {
-        & + & {
-            margin-left: 94px;
-        }
-    }
-
     &__link {
         font-size: 1.125rem;
         color: $dark-gray;
         transition: $transition;
 
         &:hover {
-            color: $red;
+            color: $red; 
         }
     }
 }
@@ -48,6 +44,7 @@
         font-size: 1.5rem;   
         letter-spacing: .5px;   
         margin-bottom: 3px;
+        font-weight: $fw-regular;
     }
 
     &__callback {

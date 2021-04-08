@@ -85,12 +85,37 @@ var bodyUnLock = function bodyUnLock() {
   popupElems.forEach(function (popupElem) {
     return popupElem.addEventListener("click", function (e) {
       var target = e.target;
-      e.preventDefault();
 
       if (target.classList.contains('open') || target.classList.contains('popup__close')) {
         popupClose(popupElem);
         bodyUnLock();
+        e.preventDefault();
       }
+    });
+  });
+}
+{
+  var wallLength = document.querySelector('.wall-length');
+  var wallHeight = document.querySelector('.wall-height');
+  var anotherArea = document.querySelector('.another-area');
+  var quantityResult = document.querySelector('.quantity__result');
+  var totalResult = document.querySelector('.total__result');
+  var inputs = document.querySelectorAll('.calc');
+
+  var strToNumber = function strToNumber(str) {
+    return str.value ? parseInt(str.value) : 0;
+  };
+
+  var calculation = function calculation() {
+    var result = Math.round((strToNumber(wallLength) * strToNumber(wallHeight) - strToNumber(anotherArea)) / 0.01625);
+    quantityResult.textContent = result;
+    totalResult.textContent = result * 4500;
+  };
+
+  inputs.forEach(function (input) {
+    return input.addEventListener("input", function () {
+      if (input.value < 0) input.value = "";
+      calculation();
     });
   });
 } // const getProducts = async () => {

@@ -88,12 +88,38 @@ const bodyUnLock = () => {
 
     popupElems.forEach(popupElem => popupElem.addEventListener("click", e => {
         const target = e.target;
-        e.preventDefault();
         if (target.classList.contains('open') || target.classList.contains('popup__close')) {
             popupClose(popupElem);
             bodyUnLock();
+            e.preventDefault();
         }
     }));
+}
+
+
+{
+    const wallLength = document.querySelector('.wall-length');
+    const wallHeight = document.querySelector('.wall-height');
+    const anotherArea = document.querySelector('.another-area');
+    const quantityResult = document.querySelector('.quantity__result');
+    const totalResult = document.querySelector('.total__result');
+    const inputs = document.querySelectorAll('.calc');
+
+
+    const strToNumber = str => str.value ? parseInt(str.value) : 0;
+
+    const calculation = () => {
+        const result = Math.round((strToNumber(wallLength) * strToNumber(wallHeight) - strToNumber(anotherArea)) / 0.01625);
+        quantityResult.textContent = result;
+        totalResult.textContent = result * 4500;
+    };
+
+    inputs.forEach(input => input.addEventListener("input", () => {
+        if (input.value < 0) input.value = "";
+        calculation();
+    }));
+
+
 }
 
 

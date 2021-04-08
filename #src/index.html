@@ -24,31 +24,10 @@
     <main class="main">
         <div class="container">
             <section class="intro">
+
                 <div class="intro-slider-wrap">
                     <div class="intro-slider swiper-container">
                         <div class="intro-wrapper swiper-wrapper">
-                            <div class="intro-slider__item swiper-slide">
-                                <img src="img/photo.png" alt="Дом из нашего кирпича">
-                                <span class="product__ribbon product__ribbon--red">Лучшая цена</span>
-                                <div class="intro-description">
-                                    <h4 class="product__title product__title--white">Кирпич облицовочный М95 <br>
-                                        Воткинский</h4>
-                                    <p class="product__description product__description--white">Кол-во на поддоне, шт. -
-                                        297 <br> Формат одинарный</p>
-                                    <div class="product__info">
-                                        <p class="product__delivery product__delivery--white">бесплатная доставка</p>
-                                        <p class="product__availability product__availability--white">в наличии</p>
-                                    </div>
-                                    <div class="product__prices">
-                                        <div class="product__price product__price--white"><span>4500</span> &#x20bd; /
-                                            шт.</div>
-                                    </div>
-                                    <div class="product__btns">
-                                        <a href="#" class="btn btn-buy btn-buy--white">Купить в 1 клик</a>
-                                        <a href="#" class="product__btn-cart product__btn-cart--white"></a>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="intro-slider__item swiper-slide">
                                 <img src="img/photo.png" alt="Дом из нашего кирпича">
                                 <span class="product__ribbon product__ribbon--red">Лучшая цена</span>
@@ -104,6 +83,21 @@
                     <a href="#" class="section-link section-link--red">Перейти в раздел скидок</a>
                 </div>
                 <div class="special-offers__content">
+                    @@include('common/product/product-card.html', {
+                    'text': 'Лидер продаж'
+                    })
+                    @@include('common/product/product-card.html', {
+                    'text': 'Лидер продаж'
+                    })
+                    @@include('common/product/product-card.html', {
+                    'text': 'Лидер продаж'
+                    })
+                    @@include('common/product/product-card.html', {
+                    'text': 'Лидер продаж'
+                    })
+                    @@include('common/product/product-card.html', {
+                    'text': 'Лидер продаж'
+                    })
                     @@include('common/product/product-card.html', {
                     'text': 'Лидер продаж'
                     })
@@ -189,7 +183,6 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-
                         </div>
                         <h4 class="services__title">Шеф-монтаж</h4>
                         <p class="services__descr">
@@ -304,7 +297,7 @@
     @@include('common/footer.html')
 
     <div class="popup" id="popup1">
-       
+
         <div class="popup__body">
             <a href="#" class="popup__close">&times;</a>
             <div class="popup__content">
@@ -335,6 +328,32 @@
                         <input id="checkbox1" type="checkbox" required>
                     </div>
                     <button type="submit" class="btn btn-form">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup open" id="popup3">
+        <div class="popup__body">
+            <a href="#" class="popup__close">&times;</a>
+            <div class="popup__content">
+                <h3 class="popup__title">Онлайн расчёт кирпича</h3>
+                <form class="popup__form">
+                    <input type="number" class="wall-length calc" placeholder="Длина всех стен, м." min="1" required>
+                    <input type="number" class="wall-height calc" placeholder="Высота всех стен, м." min="1" required>
+                    <input type="number" class="another-area calc" placeholder="Площадь окон, дверей, м." min="1"
+                        required>
+                    <div class="calculation-result">
+                        <h4 class="calculation-result__title">Результаты расчета:</h4>
+                        <div class="quantity">
+                            <p class="quantity__text">Количество кирпичей, шт:</p>
+                            <span class="quantity__result">0</span>
+                        </div>
+                        <div class="total">
+                            <p class="total__text">Итоговая стоимость:</p>
+                            <span class="total__result">0 &#x20bd;</span>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
